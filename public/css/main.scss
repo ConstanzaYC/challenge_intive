@@ -1,0 +1,115 @@
+$content: "First content";
+$content: "Second content?" !default;
+$new_content: "Fiasdfaksjsddlkfarst time reference" !default;
+$grey : #eeeeee;
+$deep-blue: #5891d1;
+$blue: #8eb5e1;
+$light-blue: #a5c5e6;
+$light-green: #dff0d8;
+$paddings-20: 20px;
+$border: 2px solid $deep-blue;
+
+body {
+  background-color: $grey;
+  .Title {
+    width: 100%;
+    color: $deep-blue;
+    text-align: center;
+  }
+}
+
+.Container {
+  width: 100%;
+  height: auto;
+  display: inline-flex;
+  .Left-container {
+    width: 50%;
+    margin: 0 20px 0 40px; 
+    padding: $paddings-20;
+    display: block;
+    form {
+      width: 55%;
+      input,
+      .Dropdown-countries {
+        width: 224px;
+        border: $border;
+        color: $deep-blue;
+      }
+      input, 
+      select {
+        width: 200px ;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      .form-group {
+        display: flex;
+        justify-content: space-between;
+        label {
+          line-height: 35px;
+          color: $deep-blue;
+          font-weight: 600;
+        }
+      }
+      .save-button {
+        width: 100px;
+        margin-top: 30px;
+        background: transparent;
+        font-weight: 600;
+      }
+      input::placeholder {
+        color: $deep-blue;
+      }
+
+    }
+    .greeting-box {
+      width: 80%;
+      background: $light-green;
+      border-radius: 5px;
+      padding: $paddings-20; 
+      
+    }
+  }
+  .Right-container {
+    width: 50%;
+    height: 600px;
+    display: inline-block;
+    margin: 20px 100px 0 0;
+    text-align: right;
+    .ListofName {
+      width: 90%;
+      height: 90%;
+      border: $border;
+      table {
+        width: 100%;
+        text-align: left;
+        border-collapse: collapse;
+        thead {
+          tr{ 
+          border-bottom: 2px solid #e8e8e8;
+          height: 50px; 
+          }
+          th {
+            width: 33%;
+            padding-left: $paddings-20;
+          }
+        }
+        tbody { 
+          tr {
+            height: 50px; 
+            border-bottom: 2px solid #e8e8e8;
+            td {
+              padding-left: $paddings-20;
+            }
+          }
+      } }
+    }
+    .Name-footer {
+      color: $deep-blue;
+      font-weight: 600;
+      padding-right: 55px;
+      width: 80%;
+      float: right;
+     
+    }
+  }
+}

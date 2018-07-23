@@ -9,8 +9,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && npm run sass",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass": "sass public/css/main.scss public/css/main.css",
+    "sass-watch": "npm run sass -- --watch"
   }
 }

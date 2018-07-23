@@ -1,0 +1,100 @@
+body {
+  background-color: #eeeeee;
+}
+body .Title {
+  width: 100%;
+  color: #5891d1;
+  text-align: center;
+}
+
+.Container {
+  width: 100%;
+  height: auto;
+  display: inline-flex;
+}
+.Container .Left-container {
+  width: 50%;
+  margin: 0 20px 0 40px;
+  padding: 20px;
+  display: block;
+}
+.Container .Left-container form {
+  width: 55%;
+}
+.Container .Left-container form input,
+.Container .Left-container form .Dropdown-countries {
+  width: 224px;
+  border: 2px solid #5891d1;
+  color: #5891d1;
+}
+.Container .Left-container form input,
+.Container .Left-container form select {
+  width: 200px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.Container .Left-container form .form-group {
+  display: flex;
+  justify-content: space-between;
+}
+.Container .Left-container form .form-group label {
+  line-height: 35px;
+  color: #5891d1;
+  font-weight: 600;
+}
+.Container .Left-container form .save-button {
+  width: 100px;
+  margin-top: 30px;
+  background: transparent;
+  font-weight: 600;
+}
+.Container .Left-container form input::placeholder {
+  color: #5891d1;
+}
+.Container .Left-container .greeting-box {
+  width: 80%;
+  background: #dff0d8;
+  border-radius: 5px;
+  padding: 20px;
+}
+.Container .Right-container {
+  width: 50%;
+  height: 600px;
+  display: inline-block;
+  margin: 20px 100px 0 0;
+  text-align: right;
+}
+.Container .Right-container .ListofName {
+  width: 90%;
+  height: 90%;
+  border: 2px solid #5891d1;
+}
+.Container .Right-container .ListofName table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+.Container .Right-container .ListofName table thead tr {
+  border-bottom: 2px solid #e8e8e8;
+  height: 50px;
+}
+.Container .Right-container .ListofName table thead th {
+  width: 33%;
+  padding-left: 20px;
+}
+.Container .Right-container .ListofName table tbody tr {
+  height: 50px;
+  border-bottom: 2px solid #e8e8e8;
+}
+.Container .Right-container .ListofName table tbody tr td {
+  padding-left: 20px;
+}
+.Container .Right-container .Name-footer {
+  color: #5891d1;
+  font-weight: 600;
+  padding-right: 55px;
+  width: 80%;
+  float: right;
+}
+
+/*# sourceMappingURL=main.css.map */
