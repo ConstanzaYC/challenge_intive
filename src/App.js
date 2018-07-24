@@ -92,8 +92,8 @@ class App extends Component {
               this.state.greetingBoxHandle &&
                 <div className="greeting-box">      
                   <p>Hello {this.state.name} {this.state.surname} from {this.state.countrySelected}. 
-                  On {this.state.birthday.split("/")[0]}/{this.state.birthday.split("/")[1]} of 
-                  you will be {new Date().getFullYear() - this.state.birthday.split("/")[2] + 1} years old.</p> 
+                  On {this.state.birthday.split("/")[0]}/{this.state.birthday.split("/")[1]} you will 
+                  have {new Date().getFullYear() - this.state.birthday.split("/")[2] + 1}.</p> 
                 </div>              
             }
           </div>
