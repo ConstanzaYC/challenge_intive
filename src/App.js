@@ -11,7 +11,9 @@ class App extends Component {
         countries: [],
         birthday: '',
         greetingBoxHandle: false,
-        tableHandle: false
+        tableHandle: false,
+        dataList: [],
+        date: ''
       };
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this); 
@@ -29,7 +31,6 @@ class App extends Component {
         },
         (error) => {
           this.setState({
-            isLoaded: true,
             error
           });
         }
@@ -40,10 +41,20 @@ class App extends Component {
     }
     
     handleSubmit(evt) {
+      // agregar a arr un elemento
+      const elem = {
+        name: this.state.name,
+        surname: this.state.surname,
+        country: this.state.countrySelected,
+        birthday: this.state.birthday
+      };
+      
       this.setState({
         greetingBoxHandle: true,
-        tableHandle: true
+        tableHandle: true,
+        dataList: this.state.dataList.concat([elem])
       });
+      
       evt.preventDefault();
     }
     render () {
@@ -51,7 +62,7 @@ class App extends Component {
       return (
         <div className="Container">
           <div className="Left-container">
-            <form onSubmit={this.handleSubmit}>
+            <div className="Div-form">
               <div className="form-group">
                 <label>Name:</label>
                 <input type="text" name="name" placeholder="name here" value={this.state.value} onChange={this.handleChange} />
@@ -75,13 +86,15 @@ class App extends Component {
                 <label>Birthday:</label>
                 <input type="text" name="birthday" placeholder="mm/dd/yyyy" onChange={this.handleChange} />
               </div>
-              <input className="save-button" type="submit" value="Save" />
-            </form>
+              <input className="save-button" type="button" value="Save" onClick={this.handleSubmit} />
+            </div>
             {
               this.state.greetingBoxHandle &&
-              <div className="greeting-box">      
-                <p>Hello {this.state.name} {this.state.surname} from {this.state.countrySelected} . On of  you will have </p> 
-              </div>
+                <div className="greeting-box">      
+                  <p>Hello {this.state.name} {this.state.surname} from {this.state.countrySelected}. 
+                  On {this.state.birthday.split("/")[0]}/{this.state.birthday.split("/")[1]} of 
+                  you will be {new Date().getFullYear() - this.state.birthday.split("/")[2] + 1} years old.</p> 
+                </div>              
             }
           </div>
           <div className="Right-container">
@@ -97,11 +110,14 @@ class App extends Component {
                 <tbody>
                   {
                     this.state.tableHandle &&
-                    <tr>
-                      <td>{this.state.name} {this.state.surname}</td>
-                      <td>{this.state.countrySelected}</td>
-                      <td>{this.state.birthday}</td>
+                    this.state.dataList.map((item) => (
+                      <tr>
+                        <td>{item.name} {item.surname}</td>
+                        <td>{item.country}</td>
+                        <td>{item.birthday}</td>
                       </tr>
+                    ))
+
                   }
                 </tbody>
               </table>

@@ -1,3 +1,4 @@
+@import 'reset';
 $content: "First content";
 $content: "Second content?" !default;
 $new_content: "Fiasdfaksjsddlkfarst time reference" !default;
@@ -15,6 +16,9 @@ body {
     width: 100%;
     color: $deep-blue;
     text-align: center;
+    padding: $paddings-20;
+    font-size: 24px;
+    font-weight: 600;
   }
 }
 
@@ -26,18 +30,20 @@ body {
     width: 50%;
     margin: 0 20px 0 40px; 
     padding: $paddings-20;
-    display: block;
-    form {
-      width: 55%;
+    display: flex;
+    flex-direction: column;
+    .Div-form {
+      width: 60%;
+      margin: 0 auto;
       input,
       .Dropdown-countries {
-        width: 224px;
+        width: 70%;
         border: $border;
         color: $deep-blue;
       }
       input, 
       select {
-        width: 200px ;
+        width: 70%;
         padding: 10px;
         margin-bottom: 10px;
       }
@@ -55,42 +61,43 @@ body {
         margin-top: 30px;
         background: transparent;
         font-weight: 600;
+        float: right;
       }
       input::placeholder {
         color: $deep-blue;
       }
-
     }
     .greeting-box {
-      width: 80%;
+      width: 90%;
       background: $light-green;
       border-radius: 5px;
-      padding: $paddings-20; 
-      
+      padding: $paddings-20;
+      margin: 0 auto;      
     }
   }
   .Right-container {
     width: 50%;
-    height: 600px;
     display: inline-block;
     margin: 20px 100px 0 0;
     text-align: right;
     .ListofName {
       width: 90%;
-      height: 90%;
+      height: 100%;
       border: $border;
       table {
         width: 100%;
         text-align: left;
         border-collapse: collapse;
         thead {
-          tr{ 
-          border-bottom: 2px solid #e8e8e8;
+          tr { 
+          border-bottom: 3px solid #e8e8e8;
           height: 50px; 
           }
           th {
             width: 33%;
             padding-left: $paddings-20;
+            vertical-align: middle;
+            font-weight: 600;
           }
         }
         tbody { 
@@ -99,6 +106,7 @@ body {
             border-bottom: 2px solid #e8e8e8;
             td {
               padding-left: $paddings-20;
+              vertical-align: middle;
             }
           }
       } }
